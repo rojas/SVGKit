@@ -101,7 +101,7 @@ static float cachedDevicePixelsPerInch;
 	CSSPrimitiveValue* pv = [[CSSPrimitiveValue alloc] init];
 	
 	pv.pixelsPerInch = cachedDevicePixelsPerInch;
-	pv.cssText = s;
+    pv.cssText = [s stringByReplacingOccurrencesOfString:@"pt" withString:@""];
 	
 	SVGLength* result = [[SVGLength alloc] initWithCSSPrimitiveValue:pv];
 	
